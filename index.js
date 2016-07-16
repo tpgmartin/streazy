@@ -1,1 +1,1 @@
-module.exports = require('.src/streazy');
+module.exports = require('./dist/streazy');
