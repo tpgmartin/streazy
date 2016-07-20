@@ -1,1 +1,3 @@
-module.exports = require('./dist/streazy');
+'use strict'
+
+module.exports = require('./dist/streazy')
