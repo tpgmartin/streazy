@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist/",
     "dev": "npm start && npm test",
+    "hooks": "chmod +x hooks/*; cd .git/hooks && ln -sf ../../hooks/* . && exit 0",
     "lint": "eslint .",
     "start": "webpack --progress --colors",
     "test": "npm run lint && mocha --compilers js:babel-core/register"
