@@ -5,6 +5,14 @@ export default class Streazy {
     this.tail = _createTail(tail)
   }
 
+  append (stream) {
+    return this.tail = stream
+  }
+
+  empty () {
+    return typeof this.head === 'undefined'
+  }
+
 }
 
 function _createTail (tail) {
