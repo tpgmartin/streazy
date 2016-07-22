@@ -6,9 +6,19 @@ export default class Streazy {
   }
 
   append (stream) {
-    return this.tail = stream
+    // append non stream? how to handle this?
+    if (typeof this.tail === 'function') {
+      return this.tail = stream
+    }
+
+    return this.tail.append(stream)
   }
 
+  // prepend (stream) {
+    // place existing stream as tail of target stream
+  // }
+
+  // move this to private method
   empty () {
     return typeof this.head === 'undefined'
   }
