@@ -1,10 +1,23 @@
 module.exports = {
-  entry: './src/streazy.js',
+  entry: {
+    'streazy': './src/streazy.js',
+    'wrapper': './src/wrapper.js'
+  },
+  eslint: {
+    configFile: __dirname + '/.eslintrc'
+  },
   output: {
     path: __dirname + '/dist',
-    filename: 'streazy.js'
+    filename: '[name].js'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.js$/,
