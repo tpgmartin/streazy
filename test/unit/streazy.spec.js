@@ -1,4 +1,4 @@
-import Streazy from '../src/streazy'
+import Streazy from '../../src/streazy'
 import { assert } from 'chai' 
 
 describe('Streazy', () => {
