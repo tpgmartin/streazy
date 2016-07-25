@@ -14,9 +14,9 @@ export default class Streazy {
     return this.tail.append(stream)
   }
 
-  // prepend (stream) {
-    // place existing stream as tail of target stream
-  // }
+  prepend (stream) {
+    return new Streazy(stream.head,this)
+  }
 
   // move this to private method
   empty () {

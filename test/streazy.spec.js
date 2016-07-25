@@ -38,6 +38,21 @@ describe('Streazy', () => {
 
   })
 
+  describe('prepend to head of stream', () => {
+
+    it('should add operand as tail of target stream', () => {
+      let stream = new Streazy(2,3,4)
+      let stream_to_add = new Streazy(1)
+
+      let new_stream = stream.prepend(stream_to_add)
+
+      assert.equal(new_stream.head, 1)
+      assert.isObject(new_stream.tail)
+    })
+
+  })
+
+
   describe('check if empty', () => {
 
     it('true if "head" undefined', () => {
