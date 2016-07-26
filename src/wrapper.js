@@ -19,7 +19,11 @@ Wrapper.prototype.eval = function () {
 
 function _addFuncProperty(func) {
 
-  // if (!func) func = function () { }
-  return function () { return func }
+  // Refactor this
+  if (!func) {
+    return function () { }
+  } else {
+    return function () { return func }
+  }
 
 }

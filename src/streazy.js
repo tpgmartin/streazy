@@ -4,11 +4,9 @@ export default class Streazy {
 
   constructor (head, ...tail) {
     this.head = head
-    this.tail = _createTail(tail)
-  }
-
-  getTail () {
-    return this.tail.eval()
+    // ensure input tail array private
+    let _tail = _createTail(tail)
+    this.tail = _getTail(_tail)
   }
 
   append (stream) {
@@ -39,4 +37,8 @@ function _createTail (tail) {
 
   return new Wrapper(new Streazy(tail[0],tail.splice(1)))
 
+}
+
+function _getTail (tail) {
+  return tail.eval()
 }

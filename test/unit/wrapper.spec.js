@@ -16,7 +16,7 @@ describe('Wrapper', () => {
 
     assert.isObject(wrapper)
     assert.isFunction(wrapper.func)
-    assert.equal(wrapper.func, func)
+    assert.equal(wrapper.func(), func)
   })
 
 })

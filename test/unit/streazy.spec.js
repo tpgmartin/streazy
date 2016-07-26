@@ -3,27 +3,7 @@ import { assert } from 'chai'
 
 describe('Streazy', () => {
 
-  it('create Stream with function if no parameters specified', () => {
-    let stream = new Streazy()
-
-    assert.isFunction(stream.tail)
-  })
-
-  it('create Stream with head if specified', () => {
-    let stream = new Streazy(1)
-
-    assert.equal(stream.head, 1)
-  })
-
-  it('create Stream with head and tail if specified', () => {
-    let stream = new Streazy(1,2)
-    
-    assert.equal(stream.head, 1)
-    assert.isObject(stream.tail)
-    assert.equal(stream.tail.head, 2)
-  })
-
-  describe('append to end of stream', () => {
+  describe.skip('append to end of stream', () => {
 
     it('should add operand as tail of target stream', () => {
       let stream = new Streazy(1,2,3)

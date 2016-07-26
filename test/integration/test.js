@@ -1,17 +1,16 @@
 import Streazy from '../../src/streazy'
 import { assert } from 'chai' 
 
-describe.only('Integration Test', () => {
+describe('Integration Test', () => {
 
-  describe('create stream with no parametes', () => {
+  describe('create stream with no parameters', () => {
 
     it('should return Streazy object with defined tail', () => {
       let stream = new Streazy()
 
+      // Will want to change how this is returned so tail is not undefined
       assert.isUndefined(stream.head)
-      assert.isObject(stream.tail)
-      assert.isNull(stream.tail.value)
-      assert.isFunction(stream.tail.func)
+      assert.isUndefined(stream.tail)
     })
 
   })
@@ -23,8 +22,6 @@ describe.only('Integration Test', () => {
 
       assert.equal(stream.head,1)
       assert.isObject(stream.tail)
-      assert.isNull(stream.tail.value)
-      assert.isFunction(stream.tail.func)
     })
 
   })
@@ -33,8 +30,8 @@ describe.only('Integration Test', () => {
     let stream = new Streazy(1,2,3)
 
     assert.equal(stream.head,1)
-    assert.equal(stream.getTail().head,2)
-    assert.deepEqual(stream.getTail().getTail().head,[3])
+    assert.equal(stream.tail.head,2)
+    assert.deepEqual(stream.tail.tail.head,[3])
 
   })
 
