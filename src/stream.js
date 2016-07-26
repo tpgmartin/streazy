@@ -1,6 +1,6 @@
 import Wrapper from './wrapper'
 
-export default class Streazy {
+export default class Stream {
 
   constructor (head, ...tail) {
     this.head = head
@@ -19,7 +19,7 @@ export default class Streazy {
   }
 
   prepend (stream) {
-    return new Streazy(stream.head,this)
+    return new Stream(stream.head,this)
   }
 
   // move this to private method
@@ -35,7 +35,7 @@ function _createTail (tail) {
     return new Wrapper()
   }
 
-  return new Wrapper(new Streazy(tail[0],tail.splice(1)))
+  return new Wrapper(new Stream(tail[0],tail.splice(1)))
 
 }
 

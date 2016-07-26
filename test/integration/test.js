@@ -1,12 +1,12 @@
-import Streazy from '../../src/streazy'
+import Stream from '../../src/stream'
 import { assert } from 'chai' 
 
 describe('Integration Test', () => {
 
   describe('create stream with no parameters', () => {
 
-    it('should return Streazy object with defined tail', () => {
-      let stream = new Streazy()
+    it('should return Stream object with defined tail', () => {
+      let stream = new Stream()
 
       // Will want to change how this is returned so tail is not undefined
       assert.isUndefined(stream.head)
@@ -17,8 +17,8 @@ describe('Integration Test', () => {
 
   describe('create stream with parameters specified', () => {
 
-    it('should return Streazy with func property equal to new Streazy object', () => {
-      let stream = new Streazy(1,2,3)
+    it('should return Stream with func property equal to new Stream object', () => {
+      let stream = new Stream(1,2,3)
 
       assert.equal(stream.head,1)
       assert.isObject(stream.tail)
@@ -26,8 +26,8 @@ describe('Integration Test', () => {
 
   })
 
-  it('should be able return values of nested Streazy objects', () => {
-    let stream = new Streazy(1,2,3)
+  it('should be able return values of nested Stream objects', () => {
+    let stream = new Stream(1,2,3)
 
     assert.equal(stream.head,1)
     assert.equal(stream.tail.head,2)

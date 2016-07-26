@@ -5,7 +5,6 @@ export default class Wrapper {
     this.executed = false
     this.value = null
   }
-    
 
 }
 
