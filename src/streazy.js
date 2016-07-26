@@ -7,6 +7,10 @@ export default class Streazy {
     this.tail = _createTail(tail)
   }
 
+  getTail () {
+    return this.tail.eval()
+  }
+
   append (stream) {
     // append non stream? how to handle this?
     if (typeof this.tail === 'function') {
