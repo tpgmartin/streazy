@@ -6,7 +6,7 @@ export default class Wrapper {
     this.value = null
   }
 
-  eval() {
+  eval () {
     if (this.executed) return this.value
 
     this.value = this.func()

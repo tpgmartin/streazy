@@ -1,3 +1,5 @@
+import Wrapper from './wrapper'
+
 export default class Streazy {
 
   constructor (head, ...tail) {
@@ -27,8 +29,10 @@ export default class Streazy {
 
 function _createTail (tail) {
 
-  if (!tail.length || (tail[0] instanceof Array && !tail[0].length)) return function () {}
+  if (!tail.length || (tail[0] instanceof Array && !tail[0].length)) {
+    return new Wrapper()
+  }
 
-  return new Streazy(tail[0],tail.splice(1))
+  return new Wrapper(new Streazy(tail[0],tail.splice(1)))
 
 }
